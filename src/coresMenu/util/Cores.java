@@ -3,7 +3,7 @@ package coresMenu.util;
 public class Cores {
 	
 		//Reset color
-		static final String TEXT_RESET = "\u001b[0m";
+		public static final String TEXT_RESET = "\u001b[0m";
 		
 		//Text color
 

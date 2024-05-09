@@ -1,18 +1,18 @@
 package animal.model;
 
-public class Animal {
+import coresMenu.util.Cores;
+
+public abstract class Animal {
 	
 	private String tutor;
-	private int especie;
 	private float idade;
 	private String nome;
 	private String raca;
 	private String cor;
 	private int numero;
 	
-	public Animal(String tutor, int especie, float idade, String nome, String raca, String cor, int numero) {
+	public Animal(String tutor, float idade, String nome, String raca, String cor, int numero) {
 		this.tutor = tutor;
-		this.especie = especie;
 		this.idade = idade;
 		this.nome = nome;
 		this.raca = raca;
@@ -32,20 +32,6 @@ public class Animal {
 	public void setTutor(String tutor) {
 		this.tutor = tutor;
 	}
-
-
-
-	public int getEspecie() {
-		return especie;
-	}
-
-
-
-	public void setEspecie(int especie) {
-		this.especie = especie;
-	}
-
-
 
 	public float getIdade() {
 		return idade;
@@ -105,44 +91,19 @@ public class Animal {
 		this.numero = numero;
 	}
 
-
-
-	public boolean meses(int idade) {
-		if (this.getIdade() < 0.3) {
-			System.out.println("Cachoro muito novo para castração!");
-			return false;
-		}
-		
-		System.out.println("Cachoro liberado para castração");
-		return true;
-	}
-
 	public void visualizar() {
 		
-		String especie = "";
+	
 		
-		switch(this.especie){
-		
-		case 1:
-			especie = "Cachorro";
-			break;
-			
-		case 2:
-			especie = "Gato";
-			break;
-		}
-		
-		System.out.println("\n\n*********************************");
+		System.out.println("\n\n**********************************");
 		System.out.println("Dados da conta:                   ");
 		System.out.println("**********************************");
-		System.out.println("Número: " + this.numero);
-		System.out.println("Nome do tutor: " + this.tutor);
-		System.out.println("Espéciel do animal: " + especie);
-		System.out.println("Nome do animal: " + this.nome);
-		System.out.println("Idade: " + this.idade + " meses/anos");
-		System.out.println("Raça: " + this.raca);
-		System.out.println("Cor da pelagem: " + this.cor);
-		
+		System.out.println("Número: " + this.getNumero());
+		System.out.println("Nome do tutor: " + this.getTutor());
+		System.out.println("Raça do cachorro: " + this.getRaca());
+		System.out.println("Nome do animal: " + this.getNome());
+		System.out.println("Idade: " + this.getIdade() + " meses/anos");
+		System.out.println("Cor da pelagem: " + this.getCor()); 
 	}
-
+	
 }
